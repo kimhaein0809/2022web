@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+
+        /* float 해제
+        1.float item 부모의 마지막 child에 적용(:after)
+        2.block단위 태그
+        3. clear:both */
+        
+        .testimg{
+            float:left;
+            margin-right: 10px;
+        }
+        .box{width: 500px;height: 500px;background-color: #f00;}
+        div.view::after{content:"홍길동"}
+        div.view:before{content:"본사이트"}
+        .boxWrap:after{content: "";display: block;clear:both}
+    </style>
+</head>
+<body>
+    <div class="view">
+        안녕
+    </div>
+</body>
+</html>

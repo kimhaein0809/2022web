@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        .clearfix::after{content: "";display: block;clear: both;}
+        div.headerWrap{
+            width: 1000px;margin: 0 auto;
+            /* background-color: skyblue; */
+        }
+        div.headerWrap>h1{ 
+            /* background-color: pink; */
+            width: 150px;line-height: 100px;
+            text-align: center;
+            margin: auto;
+        }
+        div.headerWrap>nav.navbar{
+            width: 1000px;
+            /* width: 100%;background-color: green; */
+        }
+        div.headerWrap>nav.navbar>ul>li{
+            float: left;width: 20%;
+            text-align: center;line-height: 50px;
+        }
+        .visual{height: 400px;background-color: pink;}
+
+
+    </style>
+</head>
+<body>
+    <div class="headerWrap clearfix">
+        <h1>LOGO</h1>
+        <nav class="navbar">
+            <ul class="clearfix">
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+                <li>menu5</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="visual"></div>
+    <section class="section clearfix">
+        <div class="contents"></div>
+        <aside class="aside"></aside>
+    </section>
+
+</body>
+</html>
