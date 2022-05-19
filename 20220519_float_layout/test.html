@@ -10,12 +10,18 @@
         li{list-style: none;}
         .clearfix:after{content: "";display: block;clear: both;}
         img{display: block;}
-        .sec1{width: 1400px;background-color: skyblue;margin: 0 auto;}
-        .sec1 li{float: left;margin-right: 20px;width: calc( ( 1400px - 40px ) / 3 );}
-        .sec1 li:last-child{margin: 0;}
+
+        .sec1{width: 1400px;
+            /* background-color:skyblue; */
+            margin: 0 auto;
+        }
+        .sec1>ul>li{float: left;margin-right: 20px;width: calc( ( 1400px - 40px ) / 3 );}
+        .sec1 li:last-child{margin-right: 0;}
         .sec1 li img{width: 100%;}
         .sec1 h1{margin-bottom: 50px;text-align: center;}
-        .bgc{background-color: #333;}
+
+
+        .bgc{background-color: white;padding: 30px 0;}
         
 
         
@@ -25,7 +31,7 @@
     <div class="bgc">
         <section class="sec1">
             <h1>gallery</h1>
-            <ul>
+            <ul class="clearfix">
                 <li><img src="../images/testimg.jpg" alt=""></li>
                 <li><img src="../images/testimg.jpg" alt=""></li>
                 <li><img src="../images/testimg.jpg" alt=""></li>
