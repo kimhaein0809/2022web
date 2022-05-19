@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        .clearfix:after{content: "";display: block;clear: both;}
+        img{display: block;}
+        .sec1{width: 1400px;background-color: skyblue;margin: 0 auto;}
+        .sec1 li{float: left;margin-right: 20px;width: calc( ( 1400px - 40px ) / 3 );}
+        .sec1 li:last-child{margin: 0;}
+        .sec1 li img{width: 100%;}
+        .sec1 h1{margin-bottom: 50px;text-align: center;}
+        .bgc{background-color: #333;}
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="bgc">
+        <section class="sec1">
+            <h1>gallery</h1>
+            <ul>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
