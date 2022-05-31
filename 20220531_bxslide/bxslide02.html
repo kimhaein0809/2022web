@@ -24,19 +24,21 @@
             display: inline-block;background-color: white;padding: 10px 20px;border-radius: 10px;
         }
         .visual .slideItem{
-            height: 100vh;background-position: center;
+            height: 100vh;min-height: 800px;
+            background-position: center;
             background-repeat: no-repeat;
             background-color: orange;
             background-size: cover;
         }
 
 
-        .next{position: absolute;top: 50px;margin-top: 100px;right: 0;}
-        .pre{position: absolute;top: 50px;margin-top: 100px;}
+        .next,
+        .pre{position: absolute;top: 50%;margin-top: -50px;cursor: pointer;}
+
+        .next{right: 0;}
 
         .visual li>img{width: 100%;}
-        .box{width: 500px;margin: 0 auto}
-        .box  .slide2 > li >img{width: 100%;}
+        
 
         .bx-wrapper {
             -moz-box-shadow: 0 0 0 #ccc;
@@ -57,7 +59,7 @@
             background-color: white;position: absolute;
             z-index: 10;width: 100%;
         }
-        .wrap li{float: left;width:calc ( 100% / 3 ) ;}
+        .wrap li{float: left;width:calc ( 100% / 5 ) ;}
         .wrap li a{display: block;line-height: 40px;text-align: center;}
 
 
@@ -65,8 +67,6 @@
     <script>
         $(document).ready(function(){
             var slide = $(".slide1").bxSlider({
-                auto:true,
-                mode:'vertical',
                 controls:false
                 
             });
@@ -91,6 +91,8 @@
     <div class="wrap">
         <nav class="container">
             <ul class="clearfix">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu1</a></li>
                 <li><a href="#">menu1</a></li>
                 <li><a href="#">menu1</a></li>
                 <li><a href="#">menu1</a></li>
