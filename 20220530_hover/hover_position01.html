@@ -7,49 +7,171 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
     <style>
-        .container{width: 1000px;margin: 0 auto;}
-        .container.sec1 li{
-            float: left;width: calc( ( 100% - 20px * 3 ) / 4 );
-            margin-right: 20px;border-radius: 5px;overflow: hidden;position: relative;height: 235px;
+        .container{width: 1000px;margin: 0 auto}
+        .container li{
+            float: left;width:calc( ( 100% - 20px * 3 ) / 4 );margin-right: 20px;
+            border-radius: 5px;position: relative;overflow: hidden;
+            height: 235px;
+            
         }
-        .container.sec1 li:last-child{margin-right: 0;}
-        .container.sec1 li img{width: 100%;transition: 0.3s;transform-origin: 100% 100%;}
-        .container.sec1 .overlay{
-            position: absolute;left: -200;top: 0;width: 100%;height: 100%;
-            background-color: rgba(135, 180, 235, 0.3);transition: 0.3s;
-        }
+        .container li:last-child{margin-right: 0;}
+        .container li img{width: 100%;transition: 0.3s;}
         .container.sec1 li:hover .overlay{left: 0;}
-        .container.sec1 li:hover img{transform: scale(1.2);}
-        .container.sec1 .overlay a{
-            height: 100%;display: flex;
-            justify-content: center;align-items: center;color: white;
+        .container .overlay a{
+            display: flex;height: 100%;
+            justify-content: center;align-items: center;color:white
         }
+        .container li:hover img{transform: scale(1.2);}
+        .container.sec1 .overlay{
+            position: absolute;left: -200px;top: 0;width: 100%;height: 100%;
+            background-color: rgba(187, 255, 0, 0.3);transition:0.3s
+        }
+        
+        
+        
+        .container.sec2 li img{width: 100%;transition: 0.3s;transform-origin: 100% 100%;}
+        .container.sec2 li:hover img{transform: scale(1.2);}
+        .container.sec2 li:hover .overlay{right: 0;}
+        .container.sec2 .overlay{
+            position: absolute;right: -200px;top: 0;width: 100%;height: 100%;
+            background-color: rgba(255,0,0,0.3);transition:0.4s
+        }
+
+        .container.sec3 li img{width: 100%;transition: 0.3s;}
+        .container.sec3 li:hover img{transform: scale(1.2);}
+        .container.sec3 .overlay{
+            position: absolute;bottom: 0;top: -200px;width: 100%;height: 100%;
+            background-color: rgba(255,0,0,0.3);transition:0.3s
+        }
+        .container.sec3 li:hover .overlay{top: 0;}
+
+        .container.sec4 li img{width: 100%;transition: 0.3s;}
+        .container.sec4 li:hover img{transform: scale(1.2);}
+        .container.sec4 .overlay{
+            position: absolute;bottom: -200px;width: 100%;height: 100%;
+            background-color: rgba(255,0,0,0.3);transition:0.3s
+        }
+        .container.sec4 li:hover .overlay{bottom: 0;}
+
+
 
     </style>
 </head>
 <body>
     <div class="container sec1">
         <ul class="clearfix">
-            <li><img src="../images/testimg.jpg" alt="">
-            <div class="overlay">
-                <a href="#">프랑스</a>
-            </div>
-        </li>
-            <li><img src="../images/testimg.jpg" alt="">
-            <div class="overlay">
-                <a href="#">프랑스</a>
-            </div>
-        </li>
-            <li><img src="../images/testimg.jpg" alt="">
-            <div class="overlay">
-                <a href="#">프랑스</a>
-            </div>
-        </li>
-            <li><img src="../images/testimg.jpg" alt="">
-            <div class="overlay">
-                <a href="#">프랑스</a>
-            </div>
-        </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="container sec2">
+        <ul class="clearfix">
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="container sec3">
+        <ul class="clearfix">
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="container sec4">
+        <ul class="clearfix">
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            <li>
+                <img src="../images/testimg.jpg" alt="">
+                <div class="overlay">
+                    <a href="#">프랑스</a>
+                </div>
+            </li>
+            
         </ul>
     </div>
 </body>
