@@ -21,7 +21,7 @@
         <div id="content">
             <h2 class="blind">네이버회원가입</h2>
             <div class="join">
-                <form action="#" method="get">
+                <form action="#" method="post">
                     <fieldset>
                         <legend class="blind">아이디/비밀번호</legend>
                         <p class="field">
@@ -57,7 +57,7 @@
                             <label for="user-birth">생일</label>
                             <input type="text" id="user-birth" name="userBirth" placeholder="년도(4자)" class="inp-field w130">
                             <span class="wall">|</span>
-                            <select name="month">
+                            <select name="month" class="birMonth">
                                 <script>
                                     for(var i=1;i<13;i++){
                                         document.write(`<option value="${i}월">${i}월</option>`)
@@ -69,12 +69,39 @@
                         </p>
                         <p class="field">
                             <label for="user-cMail" class="blind">본인확인 이메일</label>
-                            <input type="text">
+                            <input type="text" name="">
                         </p>
                     </fieldset>
+                    <fieldset>
+                        <legend class="blind">휴대전화인증</legend>
+                        <p class="field confirm clearfix">
+                            <label for="tel1" class="blind">인증번호받기</label>
+                            <select name="tel1" id="tel1" class="telFirst">
+                                <option value="+032">+031</option>
+                                <option value="+032">+032</option>
+                            </select>
+                            <span class="wall">|</span>
+                            <input type="text" name="cellNum" placeholder="휴대전화번호" class="inp-field w202">
+                            <button type="text" class="btn-click btn-primary">인&nbsp;&nbsp;&nbsp;증</button>
+                        </p>
+                        <p class="field">
+                            <label for="tel-confirm" class="blind">인증번호확인</label>
+                            <input type="text" id="tel-confirm" name="telConfirm" placeholder="인증번호" class="inp-field w303">
+                            <button type="text" class="btn-click btn-success">확&nbsp;&nbsp;&nbsp;인</button>
+                        </p>
+                    </fieldset>
+                    <input type="submit" value="가입하기" class="btn-submit">
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        let month = '';
+        for(var i=1;i<13;i++){
+            month = month + `<option value="${i}월">${i}월</option>`;
+        }
+        document.getElementsByClassName("birMonth")[0].innerHTML = month;
+        // document.getElementsByTagName("body")[0].style
+    </script>
 </body>
 </html>
