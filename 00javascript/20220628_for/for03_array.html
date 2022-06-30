@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script src="../../js/jquery.bxslider.js"></script>
+    <style>
+        .box{width: 400px;}
+    </style>
+    <script>
+        $(document).readt(function(){
+            // $(.)
+        })
+    </script>
+</head>
+<body>
+    <h2>김's 성적</h2>
+    <div>국어 : <span class="kor">0</span>점</div>
+    <div>수학 : <span class="math">0</span>점</div>
+    <div>영어 : <span class="eng">0</span>점</div>
+
+    <div>
+        <ul class="score"></ul>
+    </div>
+
+    <script>
+        let kim = [80,90,80];
+        let img = ["img1","img2","img3"]
+        document.querySelector(".kor").innerHTML = kim[0];
+        document.querySelector(".math").innerHTML = kim[1];
+        document.querySelector(".eng").innerHTML = kim[2];
+
+        let score = "";
+        for(let i=0;i<kim.length;i++){
+            // score += "<li>"+ kim[i] + "</li>";
+            // score += "<li><img src='../../imges/img1.jpg'></li>"
+            score += ``
+        }
+
+        console.log(score)
+        document.querySelector(".score").innerHTML = score
+    </script>
+</body>
+</html>
