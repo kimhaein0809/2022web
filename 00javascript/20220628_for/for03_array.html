@@ -12,8 +12,8 @@
         .box{width: 400px;}
     </style>
     <script>
-        $(document).readt(function(){
-            // $(.)
+        $(document).ready(function(){
+            $(".score").bxSlider()
         })
     </script>
 </head>
@@ -23,26 +23,37 @@
     <div>수학 : <span class="math">0</span>점</div>
     <div>영어 : <span class="eng">0</span>점</div>
 
-    <div>
+    <div class="box">
         <ul class="score"></ul>
     </div>
 
     <script>
-        let kim = [80,90,80];
-        let img = ["img1","img2","img3"]
+        let kim1 = 10;
+        let kim = [80,90,80,100,80];
+        let img = [
+            "img1",
+            "img2",
+            "img3",
+            "img4",
+            "img5",
+            "img6"
+        ]
         document.querySelector(".kor").innerHTML = kim[0];
         document.querySelector(".math").innerHTML = kim[1];
         document.querySelector(".eng").innerHTML = kim[2];
 
         let score = "";
-        for(let i=0;i<kim.length;i++){
+        for(let i=0;i<img.length;i++){
             // score += "<li>"+ kim[i] + "</li>";
             // score += "<li><img src='../../imges/img1.jpg'></li>"
-            score += ``
+            score += `<li><img src="../../images/${img[i]}.jpg"></li>`
         }
 
         console.log(score)
         document.querySelector(".score").innerHTML = score
+
+        
+
     </script>
 </body>
 </html>
