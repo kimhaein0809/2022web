@@ -11,7 +11,9 @@
         .toggle{
             width: 60px;height: 60px;
             display: flex;justify-content: center;align-items: center;
-            position: relative;
+            z-index: 1;
+            position: absolute;
+            right: 0;cursor: pointer;
         }
         .toggle div{
             border-radius: 3px;
@@ -21,19 +23,22 @@
         .toggle .bar1{transform: translateY(-15px);}
         .toggle .bar3{transform: translateY(15px);}
 
-        .toggle.active .bar1{transform: translateY(0) rotate(45deg);}
+        .toggle.active .bar1{transform: translateY(0) rotate(315deg);}
         .toggle.active .bar2{opacity: 0;}
-        .toggle.active .bar3{transform: translateY(0) rotate(-45deg);}
+        .toggle.active .bar3{transform: translateY(0) rotate(-315deg);}
+        .toggle.active div{background-color: #fff;}
 
         #box{
-            width: 300px;
-            height: 700px;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            position: absolute;
+            top: 0;
+            left: -100%;
             transition: .3s;
-            opacity: 0;
         }
         #box.view{
-            background:#000;
-            opacity: 100;
+            left: 0;
         }
         
     </style>
@@ -48,25 +53,20 @@
     <div id="box"></div>
 
     <script>
-        const toggleElem = document.querySelector(".toggle");
-        const boxElem = document.querySelector("#box");
-
-        toggleElem.addEventListener("click",function(){
-            toggleElem.classList.toggle("active")
-            boxElem.classList.toggle("view")
-        })
-
+       
         let on = "1";
         
-        function onClick(){
+        $(".toggle").click(function(){
             if( on == "1"){
-                $("#box").addClass("active");
+                $(".toggle").addClass("active");
+                $("#box").addClass("view");
                 on = "2";
             }else{
-                $("#box").removeClass("active")
+                $(".toggle").removeClass("active");
+                $("#box").removeClass("view");
                 on = "1";
             }
-        }
+        })
 
         // $(".toggle").on("click",function(){
         //     onClick()
