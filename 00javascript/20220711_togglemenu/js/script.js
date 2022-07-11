@@ -1,3 +1,4 @@
+
 let view = true;
 $(".toggleMenu").click(function(){
     if( view == true){

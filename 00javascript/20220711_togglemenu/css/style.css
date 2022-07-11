@@ -1,24 +1,27 @@
 @charset "utf-8";
-/********** css responsive init **********/
+/********** css responsive init  **********/
 html,body{height: 100%;}
 body{background: skyblue;}
-.container{width: 1200px;margin: 0 auto;}
-/* navbar에 flex 들어가야함 */
+.container{width: 1200px;margin: 0 auto}
 .navbar{
-    display: flex;padding: 16px 16px;
+    display: flex;padding:16px 16px;
     background-color: #ccc;
 }
 .navbar h1{margin-right: 15px;}
-.topMenu{margin-left: auto;}
-.topNav{display: flex;height: 100%;}
+.topMenu{margin-left:auto}
+.topNav{
+    display: flex;
+    height: 100%;
+}
 .topNav a{
     display: flex;align-items: center;
     padding: 0 20px;
 }
 .topNav a:hover{background: pink;}
-.topNav a i{margin-right: 5px;}
+.topNav a i{margin-right:5px;}
 
-/* toggle */
+
+/* toggle  */
 .toggleMenu{
     width: 43px;background: white;
     display: none;
@@ -26,7 +29,8 @@ body{background: skyblue;}
 
 .bg-primary{background: blue;}
 
-/********** css responsive **********/
+
+/********** css responsive  **********/
 @media (max-width: 1399px) {
     body{background: orange;}
 }
@@ -36,37 +40,41 @@ body{background: skyblue;}
 }
 
 @media (max-width: 991px) {
-    .container{width: 100%;}
+    
 }
 
 @media (max-width: 767px) {
     body{background: gold;}
     .container{width: 100%;}
+    /* .topMenu{display: none;} */
+
     .topMenu{
         background: pink;
         position: fixed;
         width: 100%;
         height: 100%;
-        left: -100%;top: 0;
+        left:-100%;top: 0;
 
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.3s;
+        transition:0.3s
     }
     .topMenu.active{
         left: 0;
     }
     .topNav{
-        /* display: block; */
+        _display: block;
         flex-direction: column;
-        height: initial;
-        /* background: red; */
+        
+        height:initial;
+        _background: red;
     }
     .topNav a{
-        /* display: block; */
         height: 40px;
     }
+
+
     .toggleMenu{
         display: flex;margin-left: auto;
         position: relative;z-index: 1;
