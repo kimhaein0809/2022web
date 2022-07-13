@@ -16,5 +16,15 @@
             }
         }
     </script>
+    
+    <div class="box" onclick="link('www.naver.com')">네이버</div>
+    <div class="box" onclick="link('www.daum.net')">다음</div>
+    <div><a href="#" onclick="window.history.back()">test</a></div>
+
+    <script>
+        function link(plink){
+            window.location.href=`http://${plink}`
+        }
+    </script>
 </body>
 </html>
