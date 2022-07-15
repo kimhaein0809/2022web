@@ -38,7 +38,6 @@
 
         function viewData(){
             let html = "";
-
             if(listData.length > 0){
                 for(let i=0;i<listData.lemgth;i++){
                     html += `<li>${listData[i]}</li>`
@@ -48,13 +47,12 @@
             }
 
 
-
             listView.innerHTML = html;
         }
 
         delAll.addEventListener("click",function(){
-            listData = [];
-            viewData();
+            listData = [];  // data 삭제
+            viewData();  // viewlist 화면출력
         })
 
         function myDel(index){
@@ -63,8 +61,7 @@
             viewData();
         }
 
-        viewData()
-        
+        viewData() 
     </script>
 </body>
 </html>
