@@ -14,7 +14,7 @@
     <button class="btn1">입력</button>
 
     <ul class="listView">
-        
+
     </ul>
     <button class="delAll">전체삭제</button>
 
@@ -31,6 +31,7 @@
             if(inp.value != ""){
                 listData.push(inp.value);
                 inp.value = "";
+                viewData();
             }else{
                 alert("오늘의 할일을 입력해주세요.")
             }
@@ -38,9 +39,10 @@
 
         function viewData(){
             let html = "";
+
             if(listData.length > 0){
-                for(let i=0;i<listData.lemgth;i++){
-                    html += `<li>${listData[i]}</li>`
+                for(let i=0;i<listData.length;i++){
+                    html += `<li>${listData[i]} <span class="del" onclick="myDel(${i})">[삭제]</span></li>`
                 }
             }else{
                 html += "<li>오늘은 쉬는날</li>"
@@ -51,8 +53,8 @@
         }
 
         delAll.addEventListener("click",function(){
-            listData = [];  // data 삭제
-            viewData();  // viewlist 화면출력
+            listData = []; //data삭제
+            viewData();    // viewlist 화면출력
         })
 
         function myDel(index){
@@ -61,7 +63,8 @@
             viewData();
         }
 
-        viewData() 
+        viewData()
     </script>
+
 </body>
 </html>
