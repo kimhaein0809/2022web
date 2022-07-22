@@ -13,9 +13,10 @@
         .wrap ul li{cursor: pointer;}
 
         .menu{display: flex;}
-        .menu li{display: flex;justify-content: center;align-items: center;width: 200px;height: 40px;}
+        .menu li{display: flex;justify-content: center;align-items: center;width: 200px;height: 40px;cursor: pointer;}
         .menu>li.active{background: red;}
-        .content div{display: none;}
+        .content{width: 1200px;overflow: hidden;}
+        .content div{display: flex;width: 1200px;position: relative;transition: .3s;}
         .content div:first-child{display: block;}
 
     </style>
@@ -77,12 +78,10 @@
         
         console.log(this)
         $(".menu>li").click(function(){
+            let i = $(this).index();
             $(".menu>li").removeClass("active");
             $(this).addClass("active")
-
-        
-            let i = $(this).index();
-            $(".content div").hide().eq(i).show()
+            $(".content div").animate({left:-i*400},100)
 
             console.log($(this))
         })

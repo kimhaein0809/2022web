@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ta</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .tab{display: flex;width: 400px;height: 50px;}
+        .tab li{display: flex;justify-content: center;align-items: center;cursor: pointer;flex: 1 1 auto;}
+        .tab li.active{background: black;color: white;}
+        .content{width: 400px;overflow: hidden;}
+        .content img{width: 400px;}
+        .content ul{display: flex;width: 1200px;position: relative;transition: .3s;}
+    </style>
+</head>
+<body>
+    <ul class="tab">
+        <li class="active">menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+    <div class="content">
+        <ul>
+            <li><img src="../../images/apple.png" alt=""></li>
+            <li><img src="../../images/banana.png" alt=""></li>
+            <li><img src="../../images/apple.png" alt=""></li>
+            <li><img src="../../images/banana.png" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        $(".tab li").click(function(){
+            let i = $(this).index();
+            $(".tab li").removeClass("active");
+            $(this).addClass("active");
+            $(".content ul").stop().animate({left:-i*1200},100)
+        })
+    </script>
+</body>
+</html>
