@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        .container{overflow: hidden;width: 100%;}
+        .container{overflow: hidden;}
         .card-img{
+            height: 0;
             background-color: skyblue;
             padding-bottom: 60%;
             background-repeat: no-repeat;
@@ -41,7 +42,8 @@
             li.card{width: calc( 100% / 3 );}
         }
         @media screen and (min-width:1200px){
-            li.card{width: calc( 100% / 4 );margin: 0 auto;}
+            li.card{width: calc( 100% / 4 );}
+            .container{width: 1200px;margin: 0 auto;}
         }
     </style>
 </head>
