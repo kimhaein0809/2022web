@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab_prac</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #header{
+            width: 100%;z-index: 100;padding: 0 20px;
+        }
+        .navbarWrap{display: flex;padding: 20px 0 0 0 0;}
+        .navbarWrap>h1{display: flex;justify-content: center;padding: 0 20px;align-items: center;}
+        .navbar{margin-left: auto;width: 1200px;}
+        .menu{display: flex;width: 100%;height: 50px;}
+        .menu li{
+            flex: 1 1 auto;
+            display: flex;justify-content: center;align-items: center;
+            cursor: pointer;
+        }
+        .submenu{width: 100%;overflow: hidden;display: flex;position: relative;left: 0;height: 400px;}
+        .submenu img{width: 100%;height: 100%;}
+        .submenu{
+            position: absolute;width: 100%;transition: 0.3s;
+            opacity: 0;visibility: hidden;top: 50px;
+
+        }
+        .slide{position: relative;}
+        .slide img{position: absolute;opacity: 0;}
+        .slide img:nth-child(1){opacity: 1;}
+        .submenu li{display: flex;line-height: 30px;text-align: center;}
+        .submenu li:nth-child(1){width: 50px}
+        .navbar>ul>li.on .submenu{
+            transform: translateY(0px);opacity: 1;
+            visibility: visible;
+        }
+        .submenu1{display: none;}
+        .menuWrap{width: 200px;position: relative;top: 420px;}
+        .menu1>li{background: white;;margin-top: -1px;display: block;}
+        .menu1>li>a{
+            display: flex;height: 40px;align-items: center;justify-content: space-between;
+            padding: 0 16px;font-weight: bold;
+        }
+        .menu1>li>a i{transition: .3s;font-size: 10px;color: #c4c4c4;}
+        .menu1>li.hover .submenu1{
+            display: block;
+        }
+        .menu1>li>a.active i{
+            transform: rotate(180deg);
+        }
+        .menu1>li .submenu1{background: #F8F8F8;padding: 10px 16px;}
+        .menu1>li .submenu1 a{display: block;line-height: 30px;padding: 5px;font-size: 14px;font-weight: bold;}
+        .container{width: 1000px;margin: 0 auto;height: 400px;overflow: hidden;}
+        .slide1{position: relative;}
+        .slide1 div{position: absolute;opacity: 0;}
+        .slide div:nth-child(1){opacity: 1;}
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="navbarWrap">
+            <h1>LOGO</h1>
+            <nav class="navbar">
+                <ul class="menu">
+                    <li class="active"><a href="#">인사말</a>
+                        <ul class="submenu">
+                            <li class="slide">
+                                <img src="../../images/pc01.jpg" alt="">
+                                <img src="../../images/pc02.jpg" alt="">
+                                <img src="../../images/pc03.jpg" alt="">
+                            </li>
+                            <li>
+                                <p>Lorem, ipsum.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">제품정보</a>
+                        <ul class="submenu">
+                            <li class="slide">
+                                <img src="../../images/pc01.jpg" alt="">
+                                <img src="../../images/pc02.jpg" alt="">
+                                <img src="../../images/pc03.jpg" alt="">
+                            </li>
+                            <li>
+                                <p>Lorem, ipsum.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">연구개발</a>
+                        <ul class="submenu">
+                            <li class="slide">
+                                <img src="../../images/pc01.jpg" alt="">
+                                <img src="../../images/pc02.jpg" alt="">
+                                <img src="../../images/pc03.jpg" alt="">
+                            </li>
+                            <li>
+                                <p>Lorem, ipsum.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">홍보센터</a>
+                        <ul class="submenu">
+                            <li class="slide">
+                                <img src="../../images/pc01.jpg" alt="">
+                                <img src="../../images/pc02.jpg" alt="">
+                                <img src="../../images/pc03.jpg" alt="">
+                            </li>
+                            <li>
+                                <p>Lorem, ipsum.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="menuWrap">
+        <ul class="menu1">
+            <li>
+                <a href="http://www.naver.com">회사소개 <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="submenu1">
+                    <li><a href="#">인사말</a></li>
+                    <li><a href="#">연혁</a></li>
+                    <li><a href="#">VISION</a></li>
+                    <li><a href="#">CI 소개</a></li>
+                    <li><a href="#">조직도</a></li>
+                    <li><a href="#">IR</a></li>
+                    <li><a href="#">찾아오시는 길</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">제품정보 <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="submenu1">
+                    <li><a href="#">제품소식</a></li>
+                    <li><a href="#">제품검색</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">연구개발 <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="submenu1">
+                    <li><a href="#">R&D VISION</a></li>
+                    <li><a href="#">연혁 및 연구실적</a></li>
+                    <li><a href="#">연구개발품목</a></li>
+                    <li><a href="#">PRODUCT PIPELINE</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="slide1">
+            <div><img src="../../images/images01.jpg" alt=""></div>
+            <div><img src="../../images/images02.jpg" alt=""></div>
+            <div><img src="../../images/images03.jpg" alt=""></div>
+        </div>
+    </div>
+    <script>
+        // $(".menu li").click(function(){
+        //     let i = $(this).index();
+        //     $(".menu li").removeClass("active");
+        //     $(this).addClass("active");
+            
+        //     $(".content li").hide()
+        //     $(".content li").eq(i).show()
+
+        //     console.log($(this))
+        // })
+
+
+$(".navbar>ul>li").hover(function(){
+$(this).addClass("on");
+    },function(){
+    $(this).removeClass("on");
+    });
+
+
+$(".navbar>ul").clone().appendTo(".mMenu")
+
+$(".menu>li>a").click(function(e){
+    e.preventDefault();
+    $(".menu>li>a").parent().find(".submenu").slideUp()
+    if( $(this).hasClass("active")){
+        $(".menu>li>a").removeClass("active");
+        
+    }else{
+        $(this).parent().find(".submenu").slideDown();
+        $(".menu>li>a").removeClass("active");
+        $(this).addClass("active")
+
+    }
+})
+setInterval(slideNum,3000);
+        
+       let num = 0;
+       let view = 1;
+       function slideNum(){
+        num++;
+        if(num == $(".slide > img").length){
+            num = 0;
+        }
+        $(".slide>img").eq(num).css({"z-index":view++,opacity:0}).stop().animate({opacity:1},500)
+       }
+
+       $(".menu1>li>a").click(function(e){
+            e.preventDefault();
+
+            $(".menu1>li>a").parent().find(".submenu1").slideUp()
+            if( $(this).hasClass("active")){
+                $(".menu1>li>a").removeClass("active");
+
+            }else{
+                $(this).parent().find(".submenu1").slideDown();
+                $(".menu1>li>a").removeClass("active");
+                $(this).addClass("active")
+
+            }
+        })
+
+        setIntereval(slideNum,3000);
+
+        let numm = 0;
+        let vieww = 1;
+        function slideNum(){
+            num++;
+            if(num == $(".slide1 > div").length){
+                num = 0;
+            }
+            $(".slide>div").eq(num).css({"z-index":vieww++,opacity:0}).stop().animate({opacity:1},500)
+        }
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@charset "utf-8";
+/********** css responsive init **********/
+.container{width: 1200px;margin: 0 auto;}
+h1{text-align: center;}
+.navbar ul{display: flex;height: 40px;}
+.navbar ul li{
+    flex: 1 1 auto;
+    background: skyblue;
+    display: flex;justify-content: center;
+    align-items: center;
+}
+
+
+/********** css responsive **********/
+@media (max-width: 1399px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 575px) {
+
+}
