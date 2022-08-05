@@ -10,8 +10,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
+        .mytodo{width: 400px;margin: 10px auto;display: flex;height: 50px;gap:5px}
+        .mytodo .inp{flex-grow: 1;}
+        .mytodo .btn1{width:100px;}
+        .mytodo .btn2{width:100px;display: none;}
         .listView{width: 400px;margin: 0 auto}
-        .listView li{height: 40px;position: relative;margin-bottom: 3px;}
+        .listView li{
+            height: 40px;position: relative;margin-bottom: 3px;
+            border-bottom: 1px solid #000;
+        }
         .listView li .item{
             height: 100%;
             display: flex;align-items: center;
@@ -19,7 +26,7 @@
         }
         .listView li .item.active{background: skyblue;}
         .listView li .iconWrap{
-            position: absolute;right: 5px;top: 0;background: pink;
+            position: absolute;right: 5px;top: 0;
             display: flex;
         }
         .listView li .iconWrap i{
@@ -31,20 +38,44 @@
     </style>
 </head>
 <body>
+    <div class="mytodo">
+        <input type="hidden" class="num">
+        <input type="text" class="inp" value="">
+        <button class="btn1">오늘의할일</button>
+        <button class="btn2">수정</button>
+    </div>
     <ul class="listView">
 
     </ul>
 <script>
-    let listData = [
-            {todo:"오늘의 할일1",done:true},
-            {todo:"오늘의 할일2",done:false},
-            {todo:"오늘의 할일3",done:false},
-            {todo:"오늘의 할일4",done:true},
-            {todo:"오늘의 할일5",done:false},
-        ]
+    let listData = [ ];
+
+        // listData[0].todo
+        // listData[0]["todo"]
 
     const listView = document.querySelector(".listView");
+    const btn1 = document.querySelector(".btn1");
+    const btn2 = document.querySelector(".btn2");
+    const inp = document.querySelector(".inp");
+    const num = document.querySelector(".num");
 
+    btn1.addEventListener("click",function(){
+        
+        let value = {"todo":inp.value,"done":false}
+        console.log(value);
+
+        listData.push(value)
+        view();
+        inp.value = ""
+    })
+
+    btn2.addEventListener("click",function(){
+        listData[num.value].todo = inp.value;
+        btn1.style.display = "block";
+        btn2.style.display = "none";
+        inp.value ="";
+        view()
+    })
     function view(){
         let viewList = "";
         // for(let i=0;i<listData.length;i++){
@@ -64,8 +95,8 @@
             }
                                
             viewList +=  `<div class="iconWrap">
-                                <i class="fa-solid fa-trash" onclick=""></i>
-                                <i class="fa-solid fa-disease" onclick=""></i>`;
+                                <i class="fa-solid fa-trash" onclick="del(${i})"></i>
+                                <i class="fa-solid fa-disease" onclick="mod(${i},'${listData[i].todo}')"></i>`;
 
             if( listData[i].done == true){
                 viewList += `<i class="fa-solid fa-circle-check" onclick="done(${i})"></i>`; 
@@ -85,6 +116,20 @@
         console.log(idx);
         listData[idx].done = !listData[idx].done;
         view();
+    }
+
+    function del(idx){
+        listData.splice(idx,1);
+        view();
+    }
+
+    function mod(idx,todo){
+        console.log(idx,todo)
+        inp.value = todo;
+        num.value = idx;
+        btn1.style.display = "none";
+        btn2.style.display = "block";
+
     }
 
     
