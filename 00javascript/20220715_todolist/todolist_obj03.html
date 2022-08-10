@@ -50,21 +50,26 @@
     </ul>
     <script>
         let listData = [];
-        
+
         const viewData = document.querySelector(".viewData");
         const inp = document.querySelector(".inp");
         const btn1 = document.querySelector(".btn1");
+
+
+
 
         btn1.addEventListener("click",function(){
             if(inp.value != ""){
                 let value = {"todo":inp.value,"done":false};
                 listData.push(value);
 
-                value = JSON.stringify(listData)
-                localStorage.setItem("todoData",value)
+                let valueData = JSON.stringify(listData)
+                localStorage.setItem("todoData",valueData)
 
-                view()
+
+                view();
                 inp.value ="";
+
 
             }else{
                 alert("오늘의 할일을 입력하세요.");
@@ -72,28 +77,50 @@
             }
         })
 
+
+
+
         view();
 
-        function view(){
 
+        function view(){
             if(localStorage.length > 0){
                 let localData = localStorage.getItem("todoData");
                 listData = JSON.parse(localData)
             }
+
+            todoData = '';
+            listData.forEach(function(item,i){
+                console.log(listData[i]["todo"]);
+                todoData += `<li>`
+                if( item.done == true){
+                    todoData += ``
+                }
+            })
+        }
+
+
+
+        function view(){
+            if(localStorage.length > 0){
+                let localData = localStorage.getItem("todoData");
+                listData = JSON.parse(localData)
+            }
+
             todoData = '';
             listData.forEach(function(item,i){
                 // console.log(item.todo)
                 console.log(listData[i]["todo"]);
                 todoData += `<li>`
                 if( item.done == true){
-                    todoData += `    <div class="txt active" onclick="done(${i})">${listData[i]["todo"]}</div>`
+                    todoData += `    <div class="txt active"  onclick="done(${i})">${listData[i]["todo"]}</div>`
                 }else{
-                    todoData += `    <div class="txt" onclick="done(${i})">${listData[i]["todo"]}</div>`
+                    todoData += `    <div class="txt"  onclick="done(${i})">${listData[i]["todo"]}</div>`
                 }
 
                 todoData += `    <div class="iconWrap">`
                 todoData += `        <a href="#" onclick="del(${i})">D</a>`
-                todoData += `        <a href="#" onclick="">M</a>`
+                //todoData += `        <a href="#" onclick="">M</a>`
 
                 if( item.done == true){  
                     todoData += `        <a href="#" onclick="done(${i})">Ca</a>`
@@ -107,12 +134,16 @@
             viewData.innerHTML = todoData;
 
         }
-
         function del(idx){
             listData.splice(idx,1);
 
-            value = JSON.stringify(listData);
-            localStorage.setItem("todoData",value);
+            let valueData = JSON.stringify
+        }
+        function del(idx){
+            listData.splice(idx,1);
+
+            let valueData = JSON.stringify(listData);
+            localStorage.setItem("todoData",valueData);
 
             view()
 
@@ -121,11 +152,12 @@
         function done(idx){
             listData[idx].done = !listData[idx].done;
 
-            value = JSON.stringify(listData);
-            localStorage.setItem("todoData",value);
+            let valueData = JSON.stringify(listData);
+            localStorage.setItem("todoData",valueData);
 
-
+            view()
         }
+
 
 
 
