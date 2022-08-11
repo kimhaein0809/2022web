@@ -45,8 +45,7 @@
     </div>
 
     <ul class="viewData">
-        
-        
+
     </ul>
     <script>
         let listData = [];
@@ -54,9 +53,6 @@
         const viewData = document.querySelector(".viewData");
         const inp = document.querySelector(".inp");
         const btn1 = document.querySelector(".btn1");
-
-
-
 
         btn1.addEventListener("click",function(){
             if(inp.value != ""){
@@ -77,28 +73,7 @@
             }
         })
 
-
-
-
         view();
-
-
-        function view(){
-            if(localStorage.length > 0){
-                let localData = localStorage.getItem("todoData");
-                listData = JSON.parse(localData)
-            }
-
-            todoData = '';
-            listData.forEach(function(item,i){
-                console.log(listData[i]["todo"]);
-                todoData += `<li>`
-                if( item.done == true){
-                    todoData += ``
-                }
-            })
-        }
-
 
 
         function view(){
@@ -134,11 +109,7 @@
             viewData.innerHTML = todoData;
 
         }
-        function del(idx){
-            listData.splice(idx,1);
-
-            let valueData = JSON.stringify
-        }
+        
         function del(idx){
             listData.splice(idx,1);
 
@@ -157,12 +128,6 @@
 
             view()
         }
-
-
-
-
-
-    </script>
-    
+    </script> 
 </body>
 </html>
