@@ -25,6 +25,20 @@ a:link,a:visited{text-decoration: none;color:var(--font-color1);}
 .video .txtWrap{bottom: 5px;left: 40px;}
 .banner{box-shadow: var(--shadow-color2);}
 .banner a{color: var(--font-color2);}
+.banner1 > .row >div{cursor: pointer;}
+.banner1 .card{
+    border: 0 none;
+    box-shadow: var(--shadow-color2);
+}
+.adven .img1st{top: 0;right: 0;box-shadow: var(--shadow-color2)}
+.adven .img2st{bottom: 0;box-shadow: var(--shadow-color2)}
+.adven .imgView{height: 400px;}
+.adven .icon{
+    width: 80px;height: 80px;border-radius: 50%;
+    box-shadow: var(--shadow-color2)
+}
+
+
 
 
 
