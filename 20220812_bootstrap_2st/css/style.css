@@ -1,5 +1,6 @@
 @charset "utf-8";
 a:link,a:visited{text-decoration: none;color:var(--font-color1);}
+ul,li{list-style-type: none;margin: 0;padding: 0;}
 :root{
     --font-color1:#333;
     --font-color2:#eee;
@@ -38,9 +39,13 @@ a:link,a:visited{text-decoration: none;color:var(--font-color1);}
     box-shadow: var(--shadow-color2)
 }
 
+.contact{
+    background: url(../images/contact-cover.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
-
-
+.footer{background: #eee;}
 
 
 
@@ -51,4 +56,6 @@ a:link,a:visited{text-decoration: none;color:var(--font-color1);}
 
 @media (max-width:768px){
     .navbar-nav .nav-item a{color: black;}
+    .banner img{width: 30%;}
+    .adven .img3st{}
 }
