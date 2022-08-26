@@ -11,9 +11,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         .wrapper{
-            width: 500px;margin: 0 auto;
+            width: 500px;margin: 0 auto;position: relative;top: 50px;
         }
-        .wrapper .btn{margin-bottom: 10px;display: flex;align-items: center;justify-content: center;gap: 440px;}
+        .prev{position: absolute;left: 10px;top: 40%;}
+        .next{position: absolute;right: 10px;top: 40%;}
+        .next i,.prev i{color: white;font-size: 20px;opacity: .7;}
         .wrapper img{width: 100%;}
         .wrapper ul{
             position: relative;
@@ -21,10 +23,10 @@
         }
         .wrapper li{position: absolute;left: 100%;width: 100%;}
         .wrapper li:first-child{left: 0;}
-        .wrapper .pager{display: flex;gap: 10px;display: flex;justify-content: center;align-items: center;}
+        .wrapper .pager{display: flex;gap: 5px;display: flex;justify-content: center;align-items: center;margin-top: 20px;}
         .wrapper .pager span{
             display: block;
-            width: 15px;height: 15px;text-indent: -9999px;
+            width: 10px;height: 10px;text-indent: -9999px;
             background: #333;
             border-radius: 50%;
             cursor: pointer;
@@ -46,7 +48,7 @@
                     overBtn = false;
                     nextCurrent = current + 1;
                     if(nextCurrent == liNum) nextCurrent = 0;
-                    slide("next");
+                    slider("next");
                 }
             })
             $(".prev").click(function(){
@@ -102,8 +104,8 @@
             <li><img src="../../images/images05.jpg" alt="img5"></li>
         </ul>
         <div class="btn">
-            <a href="#" class="prev">prev</a>
-            <a href="#" class="next">next</a>
+            <a href="#" class="prev"><i class="fa-solid fa-chevron-left"></i></a>
+            <a href="#" class="next"><i class="fa-solid fa-chevron-right"></i></a>
         </div>
         <div class="pager">
             <span class="active">1</span>
