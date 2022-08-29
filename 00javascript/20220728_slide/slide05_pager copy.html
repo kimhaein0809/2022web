@@ -13,32 +13,30 @@
         .wrapper{
             width: 500px;margin: 0 auto;position: relative;top: 50px;
         }
+        .wrapper img{width: 100%;}
+        .wrapper ul{position: relative;overflow: hidden;width: 500px;height: 200px;}
+        .wrapper li{position: absolute;left: 100%;width: 100%;}
+        .wrapper li:first-child{left: 0;}
+
+        .wrapper .pager{
+            display: flex;gap: 5px;
+            justify-content: center;align-items: center;
+            margin-top: 20px;
+        }
+        .wrapper .pager span{display: block;width: 10px;height: 10px;text-indent: -999px;border-radius: 50%;background: #333;cursor: pointer;}
+        .wrapper .pager span.active{background: red;}
+
         .prev{position: absolute;left: 10px;top: 40%;}
         .next{position: absolute;right: 10px;top: 40%;}
         .next i,.prev i{color: white;font-size: 20px;opacity: .7;}
-        .wrapper img{width: 100%;}
-        .wrapper ul{
-            position: relative;
-            overflow: hidden;width: 500px;height: 200px;
-        }
-        .wrapper li{position: absolute;left: 100%;width: 100%;}
-        .wrapper li:first-child{left: 0;}
-        .wrapper .pager{display: flex;gap: 5px;display: flex;justify-content: center;align-items: center;margin-top: 20px;}
-        .wrapper .pager span{
-            display: block;
-            width: 10px;height: 10px;text-indent: -9999px;
-            background: #333;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .wrapper .pager span.active{background: red;}
+
     </style>
     <script>
         $(document).ready(function(){
 
             let current = 0;
             let nextCurrent = 0;
-            const liNum = $(".slide>li").length;
+            const liNum = $("slide>li").length;
             let overBtn = true;
             const sItem = $(".slide>li");
             const pager = $(".pager>span")
@@ -46,7 +44,7 @@
             $(".next").click(function(){
                 if(overBtn == true){
                     overBtn = false;
-                    nextCurrent = current + 1;
+                    nextCurrent + 1;
                     if(nextCurrent == liNum) nextCurrent = 0;
                     slider("next");
                 }
@@ -55,45 +53,30 @@
                 if(overBtn == true){
                     overBtn = false;
                     nextCurrent = current - 1;
-                    if(nextCurrent<0) nextCurrent = liNum -1;
-                    slider("prev")
+                    if(nextCurrent < 0) nextCurrent = liNum - 1
+                    slider("prev");
+
                 }
             })
 
             function slider(view){
                 pager.removeClass("active").eq(nextCurrent).addClass("active");
-                 
+
                 if(view == "next"){
                     sItem.eq(current).css({left:0}).stop().animate({left:"-100%"},500)
-                    sItem.eq(nextCurrent).css({left:"100%"}).stop().animate({left:0},500,function(){overBtn=true})
+                    sItem.eq(nextCurrent).css({left:"100%"}).stop().animate({left:0},500,function(){overBtn = true})
                 }else{
                     sItem.eq(current).css({left:0}).stop().animate({left:"100%"},500);
                     sItem.eq(nextCurrent).css({left:"-100%"}).stop().animate({left:0},500,function(){overBtn=true})
                 }
                 current = nextCurrent;
-            }   
-
+            }
             pager.click(function(){
                 nextCurrent = $(this).index();
                 slider("next")
             })
 
-            // *auto*
-
-            // setInterval(function(){
-            //     $(".next").trigger("click")
-            // },3000)
-
-            $(window).mousewheel(function(e){
-                console.log(e.deltaX)
-                if( e.deltaY < 0 ){
-                    $(".next").trigger("click")
-                }else{
-                    $(".prev").trigger("click")
-                }
-            })
-        })  
-
+        })
     </script>
 </head>
 <body>
