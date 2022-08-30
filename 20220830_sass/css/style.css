@@ -1,0 +1,35 @@
+h2 {
+  font-size: 2em;
+  color: red;
+  background: green;
+}
+
+ul, li {
+  list-style: none;
+}
+
+h2 {
+  font-size: 2em;
+  color: red;
+  background: blue;
+}
+
+.nav {
+  width: 500px;
+  margin: 0 auto;
+}
+.nav li {
+  height: 40px;
+  float: left;
+}
+.nav a {
+  display: block;
+  line-height: 40px;
+}
+
+.ntn-blue {
+  width: 100px;
+  height: 40px;
+}
+
+@ectent;/*# sourceMappingURL=style.css.map */

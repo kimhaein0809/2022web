@@ -1,0 +1,25 @@
+$han:green;
+$font-size:2em;
+
+h2{
+    font-size: 2em;color: red;background: $han;
+}
+ul, li{list-style:none}
+h2{
+    font-size:2em;
+    color:red;
+    background: blue;
+}
+.nav{
+    width: 500px;
+    margin: 0 auto;
+    li{
+        height: 40px;
+        float: left;
+    }
+    a{display: block;
+    line-height: 40px;}
+}
+.ntn-blue{
+    width: 100px;
+    height: 40px
