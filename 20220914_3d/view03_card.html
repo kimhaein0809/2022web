@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(img/back-img.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            perspective: 500px;
+        }
+
+        .cardWrap {
+            width: 200px;
+            height: 308px;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .cardWrap img {
+            display: block;
+        }
+
+        .card {
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            width: 200px;
+            height: 308px;
+            transition: .3s;
+
+        }
+
+        .card div {
+            position: absolute;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .card .card-front {
+            z-index: 1;
+        }
+
+        .card .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .cardWrap:active .card {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cardWrap active">
+        <div class="card">
+            <div class="card-front">
+                <img src="img/k.png" alt="">
+            </div>
+            <div class="card-back">
+                <img src="img/back.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        const card = document.querySelector(".cardWrap");
+        card.addEventListener("click",function(){
+            card.classList.toggle("active")
+        })
+    </script>
+</body>
+
+</html>
